@@ -29,13 +29,11 @@
         <div class="slogan">实时动态</div>
         <div class="swiper-container lb">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><a href="javascript:void(0)" style="background-image: url(/static/images/img2.png)"></a></div>
-                <div class="swiper-slide"><a href="javascript:void(0)" style="background-image: url(/static/images/img2.png)"></a></div>
-                <div class="swiper-slide"><a href="javascript:void(0)" style="background-image: url(/static/images/img2.png)"></a></div>
-                <div class="swiper-slide"><a href="javascript:void(0)" style="background-image: url(/static/images/img2.png)"></a></div>
-                <div class="swiper-slide"><a href="javascript:void(0)" style="background-image: url(/static/images/img2.png)"></a></div>
-                <div class="swiper-slide"><a href="javascript:void(0)" style="background-image: url(/static/images/img2.png)"></a></div>
-                <div class="swiper-slide"><a href="javascript:void(0)" style="background-image: url(/static/images/img2.png)"></a></div>
+                {volist name="list" id="vo"}
+                <div class="swiper-slide">
+                    <a href="javascript:void(0)" style="text-align:center;background-image: url(/static/images/img2.png)">{$vo.title}</a>
+                </div>
+                {/volist}
             </div>
             <!-- Add Pagination -->
             <div class="swiper-pagination"></div>
