@@ -31,7 +31,7 @@ class BaseService
      * @param string $msg
      * @return string
      */
-    public function returnData($data = '', $code = 200, $msg = '')
+    public function returnData($data = array(), $code = 200, $msg = '')
     {
         if (intval($code) >= 600) {
 
