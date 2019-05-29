@@ -2,6 +2,7 @@
 namespace app\index\controller;
 
 use app\index\service\IndexService;
+use cache\cache;
 use cache\yac;
 use rpcCall\local;
 use rpcCall\remote;

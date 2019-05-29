@@ -24,8 +24,8 @@ class redis
     {
         if (!($this->_redis instanceof \Redis)) {
             $this->_redis   = new \Redis();
-            $host           = Config::get('redis_host');
-            $port           = Config::get('redis_port');
+            $host           = Config::get('cache.redis.host');
+            $port           = Config::get('cache.redis.port');
             $connect        = $this->_redis->connect($host, $port);
             if (!$connect) {
                 die('redis not connected!');
