@@ -3,14 +3,36 @@ namespace app\index\controller;
 
 use app\index\service\IndexService;
 use cache\yac;
+use login\login;
+use login\qqLogin;
+use login\wxLogin;
 use rabbitmq\Rabbitmq;
 use rpcCall\local;
 use rpcCall\remote;
+use state\contextState;
+use state\paymentState;
 use think\Controller;
 use think\facade\Config;
 
 class Index extends Controller
 {
+    public function index()
+    {
+        $orderState = new paymentState();
+        $context    = new contextState($orderState);
+        $orderId    = 1;
+        $context->getOrderInfo($orderId);
+        $context->action();
+        $context->printInfo();
+        die();
+        $qqLogin    = new qqLogin();
+        $wxLogin    = new wxLogin();
+        $extendLogin= new login();
+        $extendLogin->extendLogin();
+        $login      = new login($wxLogin);
+        $login->doLogin();
+    }
+
     public function hotNews()
     {
         $data   = array(
