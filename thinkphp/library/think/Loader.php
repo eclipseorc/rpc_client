@@ -113,6 +113,7 @@ class Loader
 
         // 自动加载extend目录
         self::addAutoLoadDir($rootPath . 'extend');
+        self::addAutoLoadDir($rootPath . 'interface');
     }
 
     // 自动加载

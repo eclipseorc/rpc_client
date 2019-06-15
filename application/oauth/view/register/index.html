@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>client register</title>
+</head>
+<body>
+<form action="{:url('register/index')}" method="post">
+    <label>应用名称：</label>
+    <input type="text" name="client_name" value=""/>
+    <br/>
+    <label>appId：</label>
+    <input type="text" name="client_id" value=""/>
+    <br/>
+    <label>appSecret：</label>
+    <input type="text" name="client_secret" value=""/>
+    <br/>
+    <label>redirect_url：</label>
+    <input type="text" name="redirect_url" value=""/>
+    <br/>
+    <input type="submit" value="提交"/>
+</form>
+</body>
+</html>

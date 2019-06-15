@@ -2,6 +2,7 @@
 namespace app\index\controller;
 
 use app\index\service\IndexService;
+use cache\cache;
 use cache\yac;
 use login\login;
 use login\qqLogin;
@@ -35,10 +36,10 @@ class Index extends Controller
 
     public function hotNews()
     {
-        $data   = array(
+        $data = array(
             'service'   => 'service\index\Index',
             'method'    => 'realTimeHot',
-            'args'      => []
+            'args'      => [],
         );
         $rpc    = new remote();
         $url    = Config::get('api_url');
@@ -48,7 +49,7 @@ class Index extends Controller
         if ($deRes && is_array($deRes)) {
             if ($deRes['code']  == 200) {
                 $assign = [
-                    'list'  => $deRes['list']
+                    'list'  => $deRes['data']
                 ];
             }
         }
