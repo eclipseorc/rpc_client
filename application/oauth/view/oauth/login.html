@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>{$title}</title>
 </head>
 <body>
-$END$
+<form action="{:url('/oauth/oauth/doLogin')}" method="post">
+    <input type="text" name="username" value="" title=""/>
+    <input type="password" name="password" value="" title=""/>
+    <input type="submit" value="登陆" />
+</form>
 </body>
 </html>

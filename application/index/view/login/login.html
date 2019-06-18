@@ -2,9 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>third part login</title>
 </head>
 <body>
-$END$
+<form>
+    <label>用户名：</label>
+    <input type="text" name="username" value=""/>
+    <br/>
+    <label>密码：</label>
+    <input type="password" name="password" value=""/>
+    <br>
+    <input type="submit" name="登陆"/>&nbsp;&nbsp;<a href="{:url('login/oauthLogin')}">第三方登陆</a>
+</form>
 </body>
 </html>

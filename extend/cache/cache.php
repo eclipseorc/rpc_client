@@ -18,10 +18,10 @@ class cache
     {
         if (extension_loaded('yac')) {
             $yac    = new yac();
-            $yac->set($key, $value, $timeout);
+            return $yac->set($key, $value, $timeout);
         }
         $redis  = new redis();
-        $redis->set($key, $value, $timeout);
+        return $redis->set($key, $value, $timeout);
     }
 
     /**
@@ -35,7 +35,7 @@ class cache
             $yac = new yac();
             $res = $yac->get($key);
         }
-        if (isset($res) && $res === false) {
+        if (!isset($res) || (isset($res) && $res === false)) {
             $redis = new redis();
             $res = $redis->get($key);
         }
