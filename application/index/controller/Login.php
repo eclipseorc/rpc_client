@@ -43,7 +43,7 @@ class Login extends Controller
         ];
 
         // 重定向到授权页面
-        $url    = url('oauth/oauth/authorize');
+        $url    = 'http://oauth.aisark.com/index/oauth/authorize';
         $url    = $url . '?' . http_build_query($param);
         $this->redirect($url);
     }
@@ -54,7 +54,7 @@ class Login extends Controller
         // 重定向到该页面时，query_string中待得参数
         $state  = $request->param('state/s', '', '');
         $code   = $request->param('code/s', '', '');
-        $domain = $request->domain();
+        $domain = 'http://oauth.aisark.com';
 
         // 构造token请求参数
         $param  = [
@@ -65,7 +65,7 @@ class Login extends Controller
             'client_secret' => 'abc123456'
         ];
 
-        $url    = url('/oauth/oauth/token');
+        $url    = url('/index/oauth/token');
         $url    = $domain . $url;
         $res    = Http::post($url, $param);
         var_dump($res);
